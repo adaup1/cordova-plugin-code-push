@@ -75,8 +75,8 @@ var LocalPackage = (function (_super) {
                   _this.localPath,
                   function (localPath) {
                     zip.unzip(
-                      localPath.toUrl(),
-                      unzipDir.toUrl(),
+                      localPath.toURL(),
+                      unzipDir.toURL(),
                       newPackageUnzipped
                     );
                   },
