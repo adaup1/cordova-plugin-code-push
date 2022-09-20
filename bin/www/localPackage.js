@@ -70,7 +70,29 @@ var LocalPackage = (function (_super) {
                             installError && installError(innerError);
                             return;
                         }
-                        zip.unzip(_this.localPath, unzipDir.toInternalURL(), newPackageUnzipped);
+                //zip.unzip(_this.localPath, unzipDir.toInternalURL(), newPackageUnzipped);
+                window.resolveLocalFileSystemURL(
+                  _this.localPath,
+                  function (localPath) {
+                    zip.unzip(
+                      localPath.toUrl(),
+                      unzipDir.toUrl(),
+                      newPackageUnzipped
+                    );
+                  },
+                  function (error) {
+                    if (error) {
+                      installError &&
+                        installError(
+                          new Error(
+                            "An error occurred while installing the package." +
+                              error
+                          )
+                        );
+                    }
+                    return;
+                  }
+                );
                     });
                 };
                 if (!error && !!directoryEntry) {
