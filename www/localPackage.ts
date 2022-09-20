@@ -98,8 +98,8 @@ class LocalPackage extends Package implements ILocalPackage {
                           this.localPath,
                           function (localPath) {
                             zip.unzip(
-                              localPath.toUrl(),
-                              unzipDir.toUrl(),
+                              localPath.toURL(),
+                              unzipDir.toURL(),
                               newPackageUnzipped
                             );
                           },
