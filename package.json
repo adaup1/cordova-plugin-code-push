@@ -29,7 +29,7 @@
     "@types/cordova": "0.0.34",
     "@types/cordova-plugin-device": "^1.1.5",
     "@types/cordova-plugin-dialogs": "^1.3.2",
-    "@types/cordova-plugin-file": "^0.0.3",
+    "@types/cordova-plugin-file": "github:adaup1/cordova-plugin-file#188539354ac8fed6f3ec1ee2916aa64e250a8fa9",
     "@types/mkdirp": "^0.5.2",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.3",
